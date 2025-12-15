@@ -1,0 +1,5 @@
+<svg width="105" height="105" viewBox="0 0 105 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Checkbox with checkmark icon -->
+  <rect x="12" y="12" width="81" height="81" rx="4" stroke="#E27939" stroke-width="5" fill="none"/>
+  <path d="M32 52L45 65L73 37" stroke="#E27939" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

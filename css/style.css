@@ -408,6 +408,11 @@ section.light-blue {
   margin-bottom: 20px;
 }
 
+.service-icon img {
+  width: 105px;
+  height: 105px;
+}
+
 .service-icon svg,
 .service-icon i {
   font-size: 105px;
