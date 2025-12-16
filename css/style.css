@@ -23,6 +23,7 @@ body {
   background-color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
+  font-weight: 400;
 }
 
 /* Background pattern */
@@ -107,12 +108,14 @@ h2 {
   font-family: var(--font-open-sans);
   font-size: 50px;
   color: var(--color-dark-gray);
+  font-weight: 400;
 }
 
 h3 {
   font-family: var(--font-open-sans);
   font-size: 36px;
   color: var(--color-dark-gray);
+  font-weight: 400;
 }
 
 h4 {
@@ -127,6 +130,7 @@ p {
   line-height: 1.53;
   color: var(--color-text-gray);
   margin-bottom: 1em;
+  font-weight: 400;
 }
 
 p.large {
