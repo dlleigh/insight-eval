@@ -26,6 +26,8 @@ def capture_screenshot(url, output_path, width=1920, height=3000):
     options.add_argument('--hide-scrollbars')
     options.add_argument(f'--window-size={width},{height}')
     options.add_argument('--force-device-scale-factor=1')  # Disable DPI scaling
+    options.add_argument('--disable-cache')  # Force fresh CSS/JS loading
+    options.add_argument('--disk-cache-size=0')  # Disable disk cache
 
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
