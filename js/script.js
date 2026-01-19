@@ -58,25 +58,36 @@
 
   if (testimonials.length > 0 && prevBtn && nextBtn) {
     let currentIndex = 0;
+    let isAnimating = false;
 
-    function showTestimonial(index) {
-      // Hide all testimonials
-      testimonials.forEach(testimonial => {
-        testimonial.classList.remove('active');
-      });
+    function showTestimonial(newIndex) {
+      if (isAnimating || newIndex === currentIndex) return;
+      isAnimating = true;
 
-      // Show the current testimonial
-      testimonials[index].classList.add('active');
+      const currentEl = testimonials[currentIndex];
+      const nextEl = testimonials[newIndex];
+
+      // Start both animations simultaneously
+      nextEl.classList.add('active');
+      currentEl.classList.add('slide-out');
+      currentEl.classList.remove('active');
+
+      // Clean up after animation completes
+      setTimeout(() => {
+        currentEl.classList.remove('slide-out');
+        currentIndex = newIndex;
+        isAnimating = false;
+      }, 400);
     }
 
     function nextTestimonial() {
-      currentIndex = (currentIndex + 1) % testimonials.length;
-      showTestimonial(currentIndex);
+      const newIndex = (currentIndex + 1) % testimonials.length;
+      showTestimonial(newIndex);
     }
 
     function prevTestimonial() {
-      currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-      showTestimonial(currentIndex);
+      const newIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(newIndex);
     }
 
     // Event listeners for buttons
@@ -126,8 +137,8 @@
       }
     });
 
-    // Auto-rotate (optional - uncomment to enable)
-    // setInterval(nextTestimonial, 8000); // Change every 8 seconds
+    // Auto-rotate every 15 seconds
+    setInterval(nextTestimonial, 15000);
   }
 
   // ===========================
